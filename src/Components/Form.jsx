@@ -1,65 +1,50 @@
-/* import React from "react"; */
-import React, { useState } from "react";
-
+import { useState } from "react";
 
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
-  const [error, setError] = useState(false);
-  const [show, setShow] = useState(false);
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-  });
   
-  const handleChangeName = (e) => {
-    setUser({ ...user, name: e.target.value });
-  };
-  
-  const handleChangeEmail = (e) => {
-    setUser({ ...user, email: e.target.value });
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    
-    if (user.name.trim().length > 5 && regexEmail.test(user.email)) {
-      setShow(true);
-      setError(false);
-      console.log(user);
-    } else {
-      setError(true);
-    }
+  const [name,setName] = useState('') 
+  const [email,setEmail] = useState('') 
+
+  const [error,setError] = useState('')
+  const [showcard,setShowcard] = useState(false)
+
+  const validateEmail = (email) => {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(email);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (name.trim().length < 5 || !validateEmail(email)) {
+      setError('Por favor verifique su información nuevamente')
+      setShowcard(false)
+    } else{
+      setError('')
+      setShowcard(true)
+    }
+  }
+
   return (
-    <div>
-      <form>
-      <form onSubmit={handleSubmit}>
+    <div >
+      <form onSubmit={handleSubmit} className="home-container">
+        <input 
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <input
           type="text"
-          placeholder="Full Name"
-          onChange={handleChangeName}
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <input type="text" placeholder="Email" onChange={handleChangeEmail} />
-        <button>Send</button>
+        <button type="submit">Send</button>
+
       </form>
-      {error ? (
-        <p className="errorMessage centered">
-          ⚠ Por favor verifique su información nuevamente
-        </p>
-      ) : (
-        false
-      )}
-      {show ? (
-        <p className="centered">
-          Gracias {user.name}, te contactaremos cuando antes vía mail
-        </p>
-      ) : (
-        false
-      )}
-      </form>
+      {error && <p>{error}</p> }
+      {showcard && <p>Gracias {name}, te contactaremos cuando antes vía mail</p> }
     </div>
   );
 };
