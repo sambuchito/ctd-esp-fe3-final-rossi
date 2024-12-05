@@ -6,6 +6,7 @@ export const ContextGlobal = createContext();
 
 const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const initialState = {
   dentists: [],
   favs: lsFavs,
@@ -38,4 +39,5 @@ export const ContextProvider = ({ children }) => {
     </ContextGlobal.Provider>
   );
 };
+// eslint-disable-next-line react-refresh/only-export-components
 export const useDentistStates = () => useContext(ContextGlobal);

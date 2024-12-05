@@ -4,10 +4,6 @@ const Footer = () => {
 
   const {state} = useDentistStates();
 
-  /* const getIcon = (name) =>
-    state.theme === "dark"
-      ? `/images/ico-${name}-DH2.png`
-      : `/images/ico-${name}-DH.png`; */
 
   return (
     <footer className={state.theme === "dark" ? "dark" : ""}>

@@ -4,7 +4,7 @@ import { useDentistStates } from "./utils/global.context";
 const Card = ({ dentist }) => {
 
   const{state, dispatch} = useDentistStates()
-  const isFav = state.favs.find((fav) => fav.id == dentist.id)
+  const isFav = state.favs.find((fav) => fav.id === dentist.id)
 
   const addFav = ()=>{
     dispatch({type: isFav ? 'REMOVE_FAV': 'ADD_FAV', payload: dentist})

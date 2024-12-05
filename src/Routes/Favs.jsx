@@ -8,7 +8,7 @@ const Favs = () => {
 
   return (
     <>
-      <h1>Dentists Favs</h1>
+      <h1>Dentistas en Favs</h1>
       <div className="card-grid">
         {state.favs.map((dentist)=>(
           <Card key={dentist.id} dentist={dentist}/>
