@@ -38,19 +38,23 @@ h1 {
 }
 
 :root {
-  --navbar-background-light: #70a7cc;
-  --navbar-background-dark: #121212; 
-  --footer-background-light: #70a7cc;
-  --footer-background-dark: #121212; 
+  --navbar-background-light: #cc0505;
+  --navbar-background-dark: #141414; 
+  --footer-background-light: #cc0505;
+  --footer-background-dark: #141414; 
   --footer-text: #ffffff; 
 }
 
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
   background-color: var(--navbar-background-light); 
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
 nav img {
@@ -65,7 +69,7 @@ nav .links {
 }
 
 nav button {
-  background-color: #007bff; 
+  background-color: #031f44; 
   color: white; 
   border: none;
   padding: 0.5rem 1rem; 
@@ -83,7 +87,7 @@ nav button:focus {
   outline: none; 
 }
 
-body.dark-mode nav {
+body.dark nav {
   background-color: var(--navbar-background-dark);
 }
 
@@ -142,15 +146,15 @@ footer img {
   height: 30px; 
 }
 
-body.dark-mode footer {
+body.dark footer {
   background-color: var(--footer-background-dark);
 }
 
-body.dark-mode footer {
+body.dark footer {
   color: #ffffff;
 }
 
-body.dark-mode footer a {
+body.dark footer a {
   color: #ffffff;
 }
 
@@ -174,7 +178,7 @@ tr:nth-child(even) {
 }
 
 .dark {
-  background-color: #12121296;
+  background-color: #00000096;
   color: white;
 }
 
@@ -209,7 +213,7 @@ tr:nth-child(even) {
 
 
 
-.contact {
+.contactCons {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -219,7 +223,7 @@ tr:nth-child(even) {
   min-height: calc(100vh - 300px)
 }
 
-.contact h2, .contact p {
+.contactCons h2, .contactCons p {
   margin: 10px 0;
   padding: 0.5rem;
 }

@@ -2,13 +2,18 @@ import { useDentistStates } from "./utils/global.context";
 
 const Footer = () => {
 
-  const {state} = useDentistStates()
+  const {state} = useDentistStates();
+
+  /* const getIcon = (name) =>
+    state.theme === "dark"
+      ? `/images/ico-${name}-DH2.png`
+      : `/images/ico-${name}-DH.png`; */
 
   return (
     <footer className={state.theme === "dark" ? "dark" : ""}>
       <div className="footer-content">
         <p>Powered by</p>
-        <img src="/images/DH.png" alt="DH-logo" />
+        <img src={state.theme === "dark" ? "/images/DH2.png" : "/images/DH.png"} alt="DH-logo" />
       </div>
       <div className="social-icons">
         <img src="/images/ico-facebook.png" alt="Facebook" />

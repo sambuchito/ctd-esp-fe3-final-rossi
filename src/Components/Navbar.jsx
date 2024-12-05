@@ -12,14 +12,14 @@ const Navbar = () => {
 
   return (
     <nav className={state.theme === "dark" ? "dark" : ""}>
-      <img src="/DH.ico" alt="logo" />
+      <img src={state.theme === "dark" ? "/DH3.ico" : "/DH.ico"} alt="DH-logo" />
       <div className="links">
         <Link to={'/'}><h4>Home</h4></Link>
         <Link to={'/contact'}><h4>Contact</h4></Link>
         <Link to={'/favs'}><h4>Favs</h4></Link>
       </div>
       <button onClick={toggleTheme}>
-        {state.theme === "dark" ? "Light ☀️" : "Dark 🌜"}
+        {state.theme === "dark" ? "☀️" : "🌜"}
       </button>
     </nav>
   )

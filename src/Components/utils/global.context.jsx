@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useContext, useReducer } from "react";
-import { reducer } from "../../Reducer/reducer";
+import { reducer } from "../../Reducer/Reducer";
 
 export const ContextGlobal = createContext();
 
@@ -19,6 +19,7 @@ export const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     axios(url).then((res) => {
+      console.log(res.data);
       dispatch({ type: "GET_DENTISTS", payload: res.data });
     });
   }, []);
