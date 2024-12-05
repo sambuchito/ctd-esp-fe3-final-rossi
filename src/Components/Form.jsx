@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useDentistStates } from "./utils/global.context";
 
 
 const Form = () => {
-  
+  const { state } = useDentistStates();
+
   const [name,setName] = useState('') 
   const [email,setEmail] = useState('') 
 
@@ -40,7 +42,7 @@ const Form = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button type="submit">Send</button>
+        <button type="submit" className={state.theme === "dark" ? "submit-button-dark" : "submit-button-light"}>Send</button>
 
       </form>
       {error && <p>{error}</p> }
