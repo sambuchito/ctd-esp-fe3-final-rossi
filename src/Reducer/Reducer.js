@@ -2,6 +2,7 @@ export const reducer = (state, action) => {
 
     switch (action.type) {
         case "TOGGLE_THEME":
+            // eslint-disable-next-line no-case-declarations
             const newTheme = state.theme === "dark" ? "light" : "dark";
             return {...state, theme: newTheme};
         case 'GET_DENTISTS':

@@ -16,16 +16,27 @@ const Form = () => {
     return re.test(email);
   };
 
+  const validateName = (name) => {
+    const re = /^[a-zA-Z\s]+$/;
+    return name.trim().length >= 5 && re.test(name);
+  };
+  
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (name.trim().length < 5 || !validateEmail(email)) {
-      setError('Por favor verifique su información nuevamente')
-      setShowcard(false)
-    } else{
-      setError('')
-      setShowcard(true)
+    e.preventDefault();
+    
+    if (!validateName(name)) {
+      setError('El nombre debe tener al menos 5 caracteres y solo contener letras.');
+      setShowcard(false);
+    } else if (!validateEmail(email)) {
+      setError('Por favor ingrese un email válido.');
+      setShowcard(false);
+    } else {
+      setError('');
+      setShowcard(true);
+      setName('');
+    setEmail('');
     }
-  }
+  };
 
   return (
     <div >

@@ -16,7 +16,7 @@ code {
 
 .favButton {
   background-color: #f0f0f0;
-  padding: 10px 10px;
+  padding: 7px 85px;
   border: none;
   border-radius: 0; 
   cursor: pointer;
@@ -209,7 +209,7 @@ tr:nth-child(even) {
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 250px;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
@@ -229,9 +229,7 @@ tr:nth-child(even) {
   padding-bottom: 5rem;
 }
 
-
-
-.contactCons {
+.contactData {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -241,7 +239,7 @@ tr:nth-child(even) {
   min-height: calc(100vh - 300px)
 }
 
-.contactCons h2, .contactCons p {
+.contactData h2, .contactData p {
   margin: 10px 0;
   padding: 0.5rem;
 }
